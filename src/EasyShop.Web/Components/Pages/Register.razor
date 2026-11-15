@@ -1,0 +1,4 @@
+@attribute [ExcludeFromInteractiveRouting]
+@page "/register"
+<div class="container section"><div class="auth-card panel"><span class="eyebrow dark">JOIN EASYSHOP</span><h1>Create account</h1>@if(!string.IsNullOrWhiteSpace(Error)){<div class="alert">@Error</div>}<form method="post" action="/auth/register" class="form-grid"><AntiforgeryToken/><label>Full name<input name="name" required minlength="2" maxlength="120" autocomplete="name"/></label><label>Email<input name="email" type="email" required autocomplete="email"/></label><label>Password (8+ characters)<input name="password" type="password" required minlength="8" autocomplete="new-password"/></label><button class="btn primary full" type="submit">Create account</button></form><p class="muted">Already registered? <a href="/login">Sign in</a></p></div></div>
+@code {[SupplyParameterFromQuery]public string? Error{get;set;}}

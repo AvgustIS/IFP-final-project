@@ -1,0 +1,6 @@
+@page "/order-success/{Id:int}"
+@attribute [Authorize]
+@inject ShopService Shop
+@inject AuthenticationStateProvider Auth
+<div class="container section"><div class="empty">@if(valid){<span class="success huge">✓</span><h1>Thanks for your order!</h1><p>Order #@Id has been placed successfully.</p><a class="btn primary" href="/orders">View my orders</a>}else{<h1>Order not found</h1><a href="/orders">My orders</a>}</div></div>
+@code {[Parameter]public int Id{get;set;}private bool valid;protected override async Task OnParametersSetAsync(){var u=(await Auth.GetAuthenticationStateAsync()).User;if(int.TryParse(u.FindFirstValue(ClaimTypes.NameIdentifier),out var userId))valid=(await Shop.OrdersAsync(userId)).Any(x=>x.Id==Id);}}

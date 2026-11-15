@@ -1,0 +1,6 @@
+@page "/orders"
+@attribute [Authorize]
+@inject ShopService Shop
+@inject AuthenticationStateProvider Auth
+<div class="container section"><div class="page-heading"><span class="eyebrow dark">YOUR ACCOUNT</span><h1>My orders</h1></div>@if(orders.Count==0){<div class="empty">No orders yet. <a href="/catalog">Start shopping</a></div>}else{@foreach(var order in orders){<article class="panel order-card"><div class="order-head"><strong>Order #@order.Id</strong><span class="pill">@order.Status</span><span>@order.CreatedUtc.ToLocalTime().ToString("dd MMM yyyy")</span><strong>@order.Total.ToString("N0") ₸</strong></div><p class="muted">@order.Address · @order.PaymentMethod</p>@foreach(var i in order.Items){<div class="sum-row"><span>@i.Name × @i.Quantity</span><span>@((i.Quantity*i.UnitPrice).ToString("N0")) ₸</span></div>}</article>}}</div>
+@code {private List<ShopOrder> orders=[];protected override async Task OnInitializedAsync(){var user=(await Auth.GetAuthenticationStateAsync()).User;if(int.TryParse(user.FindFirstValue(ClaimTypes.NameIdentifier),out int id))orders=await Shop.OrdersAsync(id);}}

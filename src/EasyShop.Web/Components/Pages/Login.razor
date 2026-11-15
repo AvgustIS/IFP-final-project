@@ -1,0 +1,5 @@
+@attribute [ExcludeFromInteractiveRouting]
+@page "/login"
+@inject NavigationManager Nav
+<div class="container section"><div class="auth-card panel"><span class="eyebrow dark">WELCOME BACK</span><h1>Sign in</h1><p>Access your orders and continue shopping.</p>@if(!string.IsNullOrWhiteSpace(Error)){<div class="alert">@Error</div>}@if(!string.IsNullOrWhiteSpace(Success)){<div class="success">@Success</div>}<form method="post" action="/auth/login" class="form-grid"><AntiforgeryToken/><label>Email<input name="email" type="email" autocomplete="email" required/></label><label>Password<input name="password" type="password" autocomplete="current-password" required/></label><button class="btn primary full" type="submit">Sign in</button></form><p class="muted">New here? <a href="/register">Create account</a></p></div></div>
+@code {[SupplyParameterFromQuery]public string? Error{get;set;}[SupplyParameterFromQuery]public string? Success{get;set;}}

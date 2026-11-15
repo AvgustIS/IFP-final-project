@@ -1,0 +1,8 @@
+@page "/"
+@inject ShopService Shop
+<PageTitle>EasyShop KZ — Home</PageTitle>
+<section class="hero"><div class="container hero-inner"><div><span class="eyebrow">YOUR EVERYDAY STORE</span><h1>Good finds.<br/><em>Better days.</em></h1><p>Discover your next favorite thing — useful everyday essentials at honest prices, delivered with care.</p><a href="/catalog" class="btn primary hero-button">Explore products →</a></div><div class="hero-art"><div class="art-circle">✦</div><div class="art-label">FRESH PICKS<br/><strong>2026</strong></div></div></div></section>
+<section class="container section"><div class="section-head"><div><span class="eyebrow dark">HANDPICKED FOR YOU</span><h2>Popular right now</h2></div><a class="text-link" href="/catalog">View all products →</a></div>
+@if(items is null){<p>Loading products...</p>}else{<div class="product-grid">@foreach(var item in items){<ProductCard Item="item"/>}</div>}</section>
+<section class="container promo"><div><span class="eyebrow dark">WHY EASYSHOP?</span><h2>Shopping without the hassle.</h2><p>Clear prices, simple checkout, and an easy way to track your orders.</p></div><a class="btn dark" href="/catalog">Start shopping →</a></section>
+@code {private List<Product>? items;protected override async Task OnInitializedAsync()=>items=(await Shop.ProductsAsync()).Take(8).ToList();}

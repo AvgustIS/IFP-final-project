@@ -1,0 +1,5 @@
+@page "/admin"
+@attribute [Authorize(Roles="Admin")]
+@inject ShopService Shop
+<div class="container section"><div class="page-heading"><span class="eyebrow dark">STORE CONTROL</span><h1>Admin dashboard</h1><p>Manage your EasyShop store in one place.</p></div><div class="stats"><div class="panel"><span>Products</span><h2>@stats.Item1</h2></div><div class="panel"><span>Customers</span><h2>@stats.Item2</h2></div><div class="panel"><span>Orders</span><h2>@stats.Item3</h2></div><div class="panel"><span>Sales (excluding cancelled)</span><h2>@stats.Item4.ToString("N0") ₸</h2></div></div><div class="admin-links"><a class="btn primary" href="/admin/products">Manage products →</a><a class="btn outline" href="/admin/categories">Categories →</a><a class="btn outline" href="/admin/orders">Orders →</a></div></div>
+@code {private (int,int,int,decimal) stats;protected override async Task OnInitializedAsync()=>stats=await Shop.StatsAsync();}
