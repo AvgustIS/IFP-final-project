@@ -19,10 +19,10 @@
 | Resource Utilization | Async I/O, Dispose/await using, удаление подписок и отдельные DbContext | Не проводился профилинг CPU/памяти |
 | Testing Coverage | 69 unit/integration/HTTP тестов; два длинных E2E-сценария для каждого браузерного профиля | Процент покрытия строк/ветвей не измерялся; 100% покрытие не заявляется |
 | Quality Assurance | Проверки Edge, Firefox, desktop/mobile; скриншоты и HTML/TRX отчёты | Safari, реальные устройства и все ОС не проверены |
-| Documentation | README, USER_GUIDE_RU, DEVELOPER_GUIDE, QA_REPORT_RU, QA_CHECKLIST, DEFENSE_RU | Инструкции отражают текущий учебный объём |
+| Documentation | README, USER_GUIDE_RU, QA_REPORT_RU, QA_CHECKLIST | Инструкции отражают текущий учебный объём |
 | Innovation | FP-правила, независимые снимки заказа, транзакционное резервирование и возврат склада | Оригинальность оценивает преподаватель |
 | Creative Use of C#/.NET | Records, LINQ, switch patterns, DI, Razor parameters, cascading state, protected browser storage | Существующие механизмы используются по назначению |
-| Professionalism | Release build с -warnaserror, аудит NuGet, тестовая изоляция, руководства | Ограничения промышленного развёртывания описаны в DEVELOPER_GUIDE |
+| Professionalism | Release build с -warnaserror, аудит NuGet, тестовая изоляция, руководства | Ограничения проверки и промышленного применения описаны в QA_REPORT_RU |
 | Presentation | for_teacher/EasyShop_KZ_Defense_EN.pptx: тема, цель, задачи, план, сравнение технологий, архитектура, методология, скриншоты, проверки | ФИО необходимо заполнить; устная защита обязательна |
 
 ## Условия, которые необходимо выполнить участникам лично
