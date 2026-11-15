@@ -76,7 +76,7 @@ npx.cmd playwright test
 
 On macOS/Linux use `npm` and `npx` without `.cmd`. Browser tests launch an isolated store on port 5149, create a unique SQLite database under `artifacts/`, and use test-only credentials. They never open the normal store database. Edge must be installed for the Edge projects; Firefox is installed by Playwright. The mobile project emulates a Pixel 7 viewport in Edge; it is not a physical-device test.
 
-See [QA report](docs/QA_REPORT_RU.md), [requirements mapping](docs/REQUIREMENTS_RU.md), [user guide](docs/USER_GUIDE_RU.md), [developer notes](docs/DEVELOPER_GUIDE.md), and [defense script](docs/DEFENSE_RU.md). The editable presentation is `docs/EasyShop_KZ_Defense.pptx`; fill in the participants' full names before defense.
+See [QA report](docs/QA_REPORT_RU.md), [requirements mapping](docs/REQUIREMENTS_RU.md), [user guide](docs/USER_GUIDE_RU.md), [developer notes](docs/DEVELOPER_GUIDE.md), and [defense script](docs/DEFENSE_RU.md). The editable presentation is [the instructor version](docs/for_teacher/EasyShop_KZ_Defense_EN.pptx); fill in the participants' full names before defense.
 
 The original requirements also require personal participation and an oral defense. Source code and automated tests cannot certify those academic conditions.
 

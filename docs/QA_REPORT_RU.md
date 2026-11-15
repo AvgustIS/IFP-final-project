@@ -63,7 +63,7 @@ npx.cmd playwright test
 - `tests/e2e/test-results/.last-run.json` — status passed, failedTests пуст.
 - `artifacts/*-catalog.png`, `*-dashboard.png`, `*-admin.png` — скриншоты браузерных проверок.
 - `artifacts/publish-smoke.log` — журнал запуска опубликованной версии.
-- `docs/EasyShop_KZ_Defense.pptx` — 13 слайдов с архитектурой, сравнением, методологией и скриншотами.
+- `docs/for_teacher/EasyShop_KZ_Defense_EN.pptx` — 12 слайдов с архитектурой, сравнением, методологией и скриншотами.
 
 ## Что проверка не подтверждает
 

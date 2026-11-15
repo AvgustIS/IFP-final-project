@@ -17,3 +17,8 @@ artifacts/
 *.pyc
 *.user
 *.suo
+
+# Local presentation generators and previous versions
+/tools/
+/docs/EasyShop_KZ_Defense.pptx
+/docs/EasyShop_KZ_Defense_EN.pptx
